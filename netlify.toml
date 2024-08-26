@@ -1,0 +1,9 @@
+[build] 
+  publish = "www"
+  command = ""
+
+[dev] 
+  publish = "www"
+  command = ""
+
+
