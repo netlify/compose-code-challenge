@@ -6,14 +6,15 @@ let buffer = '';
 class UserElementHandler {
   async element(element) {
     const url = element.getAttribute('href');
-    
-    
-    
-
     let response = await fetch(new Request(url));
     if(response.ok) {
       // Replace the custom element with the content
-      element.replace(await response.text(), { html: true });
+      let html = await response.text();
+      if (!Netlify.env.has("CONTEXT")) {
+        html = `<p class="notice">Be sure to deploy these changes to enter the prize draw.</p> ${html}`;
+      }
+      
+      element.replace(html, { html: true });
     }
   }
 }
@@ -29,20 +30,6 @@ export default async (request: Request, context: Context) => {
 
   return new HTMLRewriter()
     .on('netlify-edge-include', new UserElementHandler())
-    // .on('netlify-edge-include', {
-    //   text(text) {
-    //     buffer += text.text;
-    //     if (text.lastInTextNode) {
-    //       console.log(buffer.length);
-          
-    //       handleElement(buffer)
-    //       // text.replace(buffer.replace(/pizza/gi, 'TACOS'));
-    //       buffer = '';
-    //     } else {
-    //       text.remove();
-    //     }
-    //   },ddd
-    // })
     .transform(await context.next());
 };
 
