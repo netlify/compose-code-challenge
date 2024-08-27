@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example Edge Inlcude utility</title>
+  <link rel="preload" href="https://example-styles.netlify.app/fonts/PacaembuVar-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="https://example-styles.netlify.app/fonts/MulishVar-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="https://example-styles.netlify.app/styles.css">
+</head>
+<body>
+
+  <netlify-edge-include href="https://raw.githubusercontent.com/netlify/examples/main/styles/src/_includes/header.liquid">
+    <ul id="navigation" include>
+      <li>Active page</li>
+      <li><a href="/">Navigation</a></li>
+    </ul>
+    <section id="masthead" include>
+      <h1>This title gets switched in</h1>
+      <p>Top level elements in the `netlify-edge-include` with `id`s get swapped in for corresponding elements found in the HTML returned fro the `href`</p>
+    </section>
+  </netlify-edge-include>
+  
+  <main>
+    <section>
+      <h2>Step 1: Adding an integration</h2>
+      <p>
+        Enable and use an integration to enter the competetion, and to reveal the next steps which will earn you more points for a better chance of winning.
+      </p>
+      <ul>
+        <li>Enable the following integration in your Netlify Admin: <em>netlify-edge-includes-at-compose</em></li>
+        <li>Use the integration to inject content into your site using an edge function by uncommenting the <code>netlify-edge-include</code> componenents in the source of this page and re-deploying</li>
+        <li>Follow the instructions included into the next deployment of your site</li>
+      </ul>
+    </section>
+    <section>
+      
+      <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/fixtures/add-image-cdn.html" />
+      <!-- images here -->
+      <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/fixtures/add-blob-storage.html" />
+      
+    </section>
+  </main>
+
+  
+  <netlify-edge-include href="https://raw.githubusercontent.com/netlify/examples/main/styles/src/_includes/footer.liquid" />
+
+</body>
+</html>
+
