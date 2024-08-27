@@ -9,11 +9,7 @@ class UserElementHandler {
     let response = await fetch(new Request(url));
     if(response.ok) {
       // Replace the custom element with the content
-      let html = await response.text();
-      if (!Netlify.env.has("CONTEXT")) {
-        html = `<p class="notice">Be sure to deploy these changes to enter the prize draw.</p> ${html}`;
-      }
-      
+      let html = await response.text();      
       element.replace(html, { html: true });
     }
   }
