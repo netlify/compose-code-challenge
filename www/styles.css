@@ -1,0 +1,12 @@
+/*
+  Local styles, additional to the baseline example stles at https://example-styles.netlify.app/styles.css 
+*/
+
+blockquote {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+}
+blockquote img {
+  width: 2.5em;
+}
