@@ -6,8 +6,13 @@ let buffer = '';
 class UserElementHandler {
   async element(element) {
     const url = element.getAttribute('href');
+
+    console.log(`Fetching ${url}`);
+    
+    
     let response = await fetch(new Request(url));
     if(response.ok) {
+      console.log(`Inserting response from ${url}`);
       // Replace the custom element with the content
       let html = await response.text();      
       element.replace(html, { html: true });
@@ -21,12 +26,13 @@ async function handleElement(text){
 
 export default async (request: Request, context: Context) => {
 
-  console.log(Netlify.env.has("CONTEXT"));
+  // console.log(Netlify.env.has("CONTEXT"));
+  const resp = await context.next();
   
 
   return new HTMLRewriter()
     .on('netlify-edge-include', new UserElementHandler())
-    .transform(await context.next());
+    .transform(resp);
 };
 
 export const config: Config = {
