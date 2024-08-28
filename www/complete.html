@@ -11,7 +11,7 @@
   <!-- 
     TODO: Add your name to enter the prize draw
   -->
-  <meta name="author" content="YOUR NAME">
+  <meta name="author" content="Phil Hawksworth">
   
 </head>
 <body>
@@ -47,10 +47,21 @@
     </section> 
 
     <!--looks like a good place for an edge inlcude -->
+    <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/fixtures/add-image-cdn.html"></netlify-edge-include>
+
+    <!-- 
+      TODO: 
+      Uncomment this image element and update its src attribute to use the Netliofy Image CDN
+      <img src="/images/ipad.png" alt="An image for experimenting with the Netlify Image CDN. It's an iPad Air, which is what you could win" /> 
+    -->
+    <section>
+      <img src="/.netlify/images/?url=/images/ipad.png" alt="An image for experimenting with the Netlify Image CDN. It's an iPad Air, which is what you could win" /> 
+      <img src="/.netlify/images/?url=/images/ipad.png&width=200" alt="An image for experimenting with the Netlify Image CDN. It's an iPad Air, which is what you could win" /> 
+    </section>
+     
     
-
-
     <!--looks like a good place for another edge inlcude -->
+    <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/fixtures/add-blob-storage.html"></netlify-edge-include>
 
 
   </main>
@@ -59,7 +70,7 @@
     TODO:
     Extra credit: Why not add a global branded footer to the site?
   -->
-  <!-- <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/fixtures/footer.html"></netlify-edge-include>   -->
+  <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/fixtures/footer.html"></netlify-edge-include>  
   
 </body>
 </html>
