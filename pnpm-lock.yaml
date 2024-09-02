@@ -1,0 +1,59 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@netlify/blobs':
+        specifier: ^8.0.1
+        version: 8.0.1
+      '@netlify/edge-functions':
+        specifier: ^2.10.0
+        version: 2.10.0
+      '@worker-tools/html-rewriter':
+        specifier: 0.1.0-pre.19
+        version: 0.1.0-pre.19
+
+packages:
+
+  '@netlify/blobs@8.0.1':
+    resolution: {integrity: sha512-IrZHVqillU0x12eDbsap4Ba6poi+4IdVCYjZa+tA0eD95TaSbSqfw1zNkO27MiKw0pOjPB6+RXFK4pdfOs/qUQ==}
+    engines: {node: ^14.16.0 || >=16.0.0}
+
+  '@netlify/edge-functions@2.10.0':
+    resolution: {integrity: sha512-toDBus02KyXTeErqXh9mFjH5ocGwSDO8w9q1TkSincqExtm8TMITg3iXr4/SPKE17nKt+olsEuIry5hyM8OJBQ==}
+
+  '@stardazed/streams-compression@1.0.0':
+    resolution: {integrity: sha512-SQCiwxdIVJ5xxUBYptN+fc+tJpSDbxQuJ0+3u2SmHjIzr6JIRZ28AVFtFnGy6x6j3UBlaLx73w9rC6UAFxnd1g==}
+
+  '@stardazed/zlib@1.0.1':
+    resolution: {integrity: sha512-MS6PCYiRNJ32c69+3NPyL+bu7LpiFDvMcBXnlhQnF8CKMG0R/xRVCCo422NPkQ0+Cox3xKpk5Lc1LfWFS4b3cw==}
+
+  '@worker-tools/html-rewriter@0.1.0-pre.19':
+    resolution: {integrity: sha512-IUbEZwvSdp8vtaB1LAZ/sBRJGNycd9a8cbkqO05rMEPm5MC59Sb+wiGCWaaRXrwQLDAyWeod4QC/q0TuSUI5EA==}
+
+  '@worker-tools/resolvable-promise@0.2.0-pre.6':
+    resolution: {integrity: sha512-+5RcuruCLB/P3FYYb376RgyImXaq9BBQoOskUbgPyNK3O0AXPakrXUj1EELv+lcnUSdFws/ufdrrWODLJyoTmg==}
+
+snapshots:
+
+  '@netlify/blobs@8.0.1': {}
+
+  '@netlify/edge-functions@2.10.0': {}
+
+  '@stardazed/streams-compression@1.0.0':
+    dependencies:
+      '@stardazed/zlib': 1.0.1
+
+  '@stardazed/zlib@1.0.1': {}
+
+  '@worker-tools/html-rewriter@0.1.0-pre.19':
+    dependencies:
+      '@stardazed/streams-compression': 1.0.0
+      '@worker-tools/resolvable-promise': 0.2.0-pre.6
+
+  '@worker-tools/resolvable-promise@0.2.0-pre.6': {}

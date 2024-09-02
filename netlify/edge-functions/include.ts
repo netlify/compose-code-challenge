@@ -6,6 +6,7 @@ class UserElementHandler {
   async element(element) {
     const url = element.getAttribute('href');
     let response = await fetch(new Request(url));
+
     if(response.ok) {
       // Replace the custom element with the content
       let html = await response.text();      
@@ -17,16 +18,13 @@ class UserElementHandler {
 
 export default async (request: Request, context: Context) => {
 
-  const site = context.site;
-  site['context'] = context.deploy.context;
-  // console.log(site);
-
   const resp = await context.next();
   return new HTMLRewriter()
     .on('netlify-edge-include', new UserElementHandler())
     .transform(resp);
 };
 
+
 export const config: Config = {
-  path: "*",
+  path: "/*",
 };

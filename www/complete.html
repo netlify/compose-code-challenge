@@ -44,13 +44,13 @@
         <li>Follow the instructions included into the next deployment of your site</li>
       </ol>
       
-      <pre><code>&lt;netlify-edge-include href=&quot;https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/partials/add-image-cdn.html&quot;&gt;&lt;/netlify-edge-include&gt;</code></pre>      
+      <pre><code>&lt;netlify-edge-include href=&quot;https://compose-code-challenge.netlify.app/partials/add-image-cdn.html&quot;&gt;&lt;/netlify-edge-include&gt;</code></pre>      
 
 
     </section> 
 
     <!--looks like a good place for an edge inlcude -->
-    <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/partials/add-image-cdn.html"></netlify-edge-include>
+    <netlify-edge-include href="https://compose-code-challenge.netlify.app/partials/add-image-cdn.html"></netlify-edge-include>
 
     <!-- 
       TODO: 
@@ -64,8 +64,28 @@
      
     
     <!--looks like a good place for another edge inlcude -->
-    <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/partials/add-blob-storage.html"></netlify-edge-include>
+    <netlify-edge-include href="https://compose-code-challenge.netlify.app/partials/add-blob-storage.html"></netlify-edge-include>
+    
 
+    <section>
+
+      <div class="panel">
+        <button id="ccc-vote">Pick me, pick me!</button> 
+        <b id="ccc-vote-count"></b>
+      </div>
+
+      <script>
+        const button = document.getElementById("ccc-vote");
+        const count = document.getElementById("ccc-vote-count");
+        button.addEventListener("click", async (event) => {
+          const response = await fetch("/api/count", {
+            method: "POST",
+          });
+          count.textContent = await response.text();
+        });
+      </script>
+
+    </section>
 
   </main>
 
@@ -73,7 +93,9 @@
     TODO:
     Extra credit: Why not add a global branded footer to the site?
   -->
-  <netlify-edge-include href="https://raw.githubusercontent.com/philhawksworth/edge-include-extension/main/partials/footer.html"></netlify-edge-include>  
+  <netlify-edge-include href="https://compose-code-challenge.netlify.app/partials/footer"></netlify-edge-include>  
+
+  
   
 </body>
 </html>
