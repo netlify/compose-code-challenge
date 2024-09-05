@@ -9,7 +9,7 @@ export default async (request: Request, context: Context) => {
 
   const site = context.site;
   site['context'] = context.deploy.context;  
-  await fetch('https://compose-code-challenge.netlify.app/submissions', {
+  await fetch('https://compose-challenge.netlify.app/submission', {
     method: 'POST',
     headers: {
       "Content-Type": "application/json",
