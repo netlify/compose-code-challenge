@@ -14,9 +14,9 @@ importers:
       '@netlify/edge-functions':
         specifier: ^2.10.0
         version: 2.10.0
-      '@worker-tools/html-rewriter':
-        specifier: 0.1.0-pre.19
-        version: 0.1.0-pre.19
+      '@netlify/functions':
+        specifier: ^2.8.1
+        version: 2.8.1
 
 packages:
 
@@ -27,17 +27,20 @@ packages:
   '@netlify/edge-functions@2.10.0':
     resolution: {integrity: sha512-toDBus02KyXTeErqXh9mFjH5ocGwSDO8w9q1TkSincqExtm8TMITg3iXr4/SPKE17nKt+olsEuIry5hyM8OJBQ==}
 
-  '@stardazed/streams-compression@1.0.0':
-    resolution: {integrity: sha512-SQCiwxdIVJ5xxUBYptN+fc+tJpSDbxQuJ0+3u2SmHjIzr6JIRZ28AVFtFnGy6x6j3UBlaLx73w9rC6UAFxnd1g==}
+  '@netlify/functions@2.8.1':
+    resolution: {integrity: sha512-+6wtYdoz0yE06dSa9XkP47tw5zm6g13QMeCwM3MmHx1vn8hzwFa51JtmfraprdkL7amvb7gaNM+OOhQU1h6T8A==}
+    engines: {node: '>=14.0.0'}
 
-  '@stardazed/zlib@1.0.1':
-    resolution: {integrity: sha512-MS6PCYiRNJ32c69+3NPyL+bu7LpiFDvMcBXnlhQnF8CKMG0R/xRVCCo422NPkQ0+Cox3xKpk5Lc1LfWFS4b3cw==}
+  '@netlify/node-cookies@0.1.0':
+    resolution: {integrity: sha512-OAs1xG+FfLX0LoRASpqzVntVV/RpYkgpI0VrUnw2u0Q1qiZUzcPffxRK8HF3gc4GjuhG5ahOEMJ9bswBiZPq0g==}
+    engines: {node: ^14.16.0 || >=16.0.0}
 
-  '@worker-tools/html-rewriter@0.1.0-pre.19':
-    resolution: {integrity: sha512-IUbEZwvSdp8vtaB1LAZ/sBRJGNycd9a8cbkqO05rMEPm5MC59Sb+wiGCWaaRXrwQLDAyWeod4QC/q0TuSUI5EA==}
+  '@netlify/serverless-functions-api@1.19.1':
+    resolution: {integrity: sha512-2KYkyluThg1AKfd0JWI7FzpS4A/fzVVGYIf6AM4ydWyNj8eI/86GQVLeRgDoH7CNOxt243R5tutWlmHpVq0/Ew==}
+    engines: {node: '>=18.0.0'}
 
-  '@worker-tools/resolvable-promise@0.2.0-pre.6':
-    resolution: {integrity: sha512-+5RcuruCLB/P3FYYb376RgyImXaq9BBQoOskUbgPyNK3O0AXPakrXUj1EELv+lcnUSdFws/ufdrrWODLJyoTmg==}
+  urlpattern-polyfill@8.0.2:
+    resolution: {integrity: sha512-Qp95D4TPJl1kC9SKigDcqgyM2VDVO4RiJc2d4qe5GrYm+zbIQCWWKAFaJNQ4BhdFeDGwBmAxqJBwWSJDb9T3BQ==}
 
 snapshots:
 
@@ -45,15 +48,15 @@ snapshots:
 
   '@netlify/edge-functions@2.10.0': {}
 
-  '@stardazed/streams-compression@1.0.0':
+  '@netlify/functions@2.8.1':
     dependencies:
-      '@stardazed/zlib': 1.0.1
+      '@netlify/serverless-functions-api': 1.19.1
 
-  '@stardazed/zlib@1.0.1': {}
+  '@netlify/node-cookies@0.1.0': {}
 
-  '@worker-tools/html-rewriter@0.1.0-pre.19':
+  '@netlify/serverless-functions-api@1.19.1':
     dependencies:
-      '@stardazed/streams-compression': 1.0.0
-      '@worker-tools/resolvable-promise': 0.2.0-pre.6
+      '@netlify/node-cookies': 0.1.0
+      urlpattern-polyfill: 8.0.2
 
-  '@worker-tools/resolvable-promise@0.2.0-pre.6': {}
+  urlpattern-polyfill@8.0.2: {}
