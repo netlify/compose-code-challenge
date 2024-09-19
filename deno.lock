@@ -1,5 +1,43 @@
 {
   "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:@netlify/blobs@^8.0.1": "npm:@netlify/blobs@8.0.1",
+      "npm:@netlify/edge-functions@^2.10.0": "npm:@netlify/edge-functions@2.10.0",
+      "npm:@netlify/functions@^2.8.1": "npm:@netlify/functions@2.8.1"
+    },
+    "npm": {
+      "@netlify/blobs@8.0.1": {
+        "integrity": "sha512-IrZHVqillU0x12eDbsap4Ba6poi+4IdVCYjZa+tA0eD95TaSbSqfw1zNkO27MiKw0pOjPB6+RXFK4pdfOs/qUQ==",
+        "dependencies": {}
+      },
+      "@netlify/edge-functions@2.10.0": {
+        "integrity": "sha512-toDBus02KyXTeErqXh9mFjH5ocGwSDO8w9q1TkSincqExtm8TMITg3iXr4/SPKE17nKt+olsEuIry5hyM8OJBQ==",
+        "dependencies": {}
+      },
+      "@netlify/functions@2.8.1": {
+        "integrity": "sha512-+6wtYdoz0yE06dSa9XkP47tw5zm6g13QMeCwM3MmHx1vn8hzwFa51JtmfraprdkL7amvb7gaNM+OOhQU1h6T8A==",
+        "dependencies": {
+          "@netlify/serverless-functions-api": "@netlify/serverless-functions-api@1.19.1"
+        }
+      },
+      "@netlify/node-cookies@0.1.0": {
+        "integrity": "sha512-OAs1xG+FfLX0LoRASpqzVntVV/RpYkgpI0VrUnw2u0Q1qiZUzcPffxRK8HF3gc4GjuhG5ahOEMJ9bswBiZPq0g==",
+        "dependencies": {}
+      },
+      "@netlify/serverless-functions-api@1.19.1": {
+        "integrity": "sha512-2KYkyluThg1AKfd0JWI7FzpS4A/fzVVGYIf6AM4ydWyNj8eI/86GQVLeRgDoH7CNOxt243R5tutWlmHpVq0/Ew==",
+        "dependencies": {
+          "@netlify/node-cookies": "@netlify/node-cookies@0.1.0",
+          "urlpattern-polyfill": "urlpattern-polyfill@8.0.2"
+        }
+      },
+      "urlpattern-polyfill@8.0.2": {
+        "integrity": "sha512-Qp95D4TPJl1kC9SKigDcqgyM2VDVO4RiJc2d4qe5GrYm+zbIQCWWKAFaJNQ4BhdFeDGwBmAxqJBwWSJDb9T3BQ==",
+        "dependencies": {}
+      }
+    }
+  },
   "redirects": {
     "https://ghuc.cc/worker-tools/html-rewriter/index.ts": "https://raw.githubusercontent.com/worker-tools/html-rewriter/master/index.ts",
     "https://ghuc.cc/worker-tools/resolvable-promise/index.ts": "https://raw.githubusercontent.com/worker-tools/resolvable-promise/master/index.ts"
@@ -71,6 +109,7 @@
     "packageJson": {
       "dependencies": [
         "npm:@netlify/blobs@^8.0.1",
+        "npm:@netlify/edge-functions@^2.10.0",
         "npm:@netlify/functions@^2.8.1"
       ]
     }

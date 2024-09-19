@@ -3,3 +3,4 @@
 
 node_modules
 deno.lock
+netlify/data.json

@@ -46,11 +46,17 @@
       <blockquote>
         <img src="/images/check.svg" class="check" alt="Checkmark" />
         <p>
-          You created and deployed a site. That was step 1. You're on your way.
+          You cloned the repo, created a new site, and deployed. That was step 1. You're on your way.
         </p>
       </blockquote>
       <p>
-        Make sure to add your name to the <code>meta</code> tag in the <code>head</code> of the <code>index.html</code>
+        From here you'll making some changes to the site's code. To begin with, just the <code>index.html</code> file.
+        You might choose to clone your new repo locally to work on it, or <span data-nf-enhance="repo-link">edit it
+          directly in the repo on GitHub</span>.
+      </p>
+      <p>
+        Make sure to add your name to the <code>meta</code> tag in the <code>head</code> of the <span
+          data-nf-enhance="repo-link"><code>index.html</code></span>
         file so that we know who to enter into the prize draw. Done that? Good. Let's move on to Step 2.
       </p>
     </section>
@@ -63,14 +69,16 @@
       </p>
       <h3>Here's how:</h3>
       <ol>
-        <li>Install the <code>netlify-edge-includes-at-compose</code> extension to your Netlify team by findling it in
-          the list of extensions or <a href="https://app.netlify.com/extensions/compose-challenge-edge-includes">going
-            directly to it via this link</a>.</li>
-        <li>Once installed, you can use it on any of your sites. Enable it for this site from the Netlify UI under "Site
-          configuration"</li>
         <li>
-          The extension will enable you to inject content into your site via a component as shown below. Add the code
-          shown below to the <code>index.html</code> file in this site and redeploy to see the result.
+          Install the <a href="https://app.netlify.com/extensions/compose-challenge-edge-includes"><code>netlify-edge-includes-at-compose</code></a>
+          extension for your Netlify team.
+        </li>
+        <li>
+          Once installed, you can use it on any of your sites. Enable it for this site from the Netlify UI under "Site
+          configuration / General"
+        </li>
+        <li>
+          The extension will let you inject content into your site via a component. Add the code shown below to your <span data-nf-enhance="repo-link"><code>index.html</code></span> file in this site and push your changes to trigger another site deploymentto to see the result.
           <pre><code>&lt;netlify-edge-include href=&quot;https://compose-challenge.netlify.app/partials/add-image-cdn&quot;&gt;&lt;/netlify-edge-include&gt;</code></pre>
         </li>
         <li>Follow the instructions included into the next deployment of your site</li>
