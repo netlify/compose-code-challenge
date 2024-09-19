@@ -3,13 +3,12 @@ const path = require('path');
 
 module.exports = {
 
+    // Stash some env vars for later when they are not usually available to us
     onPreBuild: async () => {
         const filePath = path.join(__dirname, '../../netlify/data.json');
         const content = {
             "repoURL": process.env.REPOSITORY_URL
         };
-
-        console.log(content);
 
         fs.writeFile(filePath, JSON.stringify(content), (err) => {
             if (err) {
