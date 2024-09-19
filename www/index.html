@@ -1,72 +1,91 @@
-<!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Netlify Compose Code Challenge</title>
-  <link rel="preload" href="https://example-styles.netlify.app/fonts/PacaembuVar-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="https://example-styles.netlify.app/fonts/MulishVar-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="https://example-styles.netlify.app/fonts/PacaembuVar-latin.woff2" as="font"
+    type="font/woff2" crossorigin />
+  <link rel="preload" href="https://example-styles.netlify.app/fonts/MulishVar-latin.woff2" as="font" type="font/woff2"
+    crossorigin />
   <link rel="stylesheet" href="https://example-styles.netlify.app/styles.css">
   <link rel="stylesheet" href="/styles.css">
 
   <!-- 
     TODO: Add your name to enter the prize draw
   -->
-  <meta name="author" content="YOUR NAME">
-  
+  <!-- <meta name="author" content="YOUR NAME"> -->
+
+  <!-- 
+    TODO: Add your email and we'll show an avatar in the leaderboard.
+    (And you'll get more points!
+    -->
+  <!-- <meta name="email" content="YOUR EMAIL ADDRESS"> -->
+
+
 </head>
+
 <body>
   <header>
     <nav>
-      <a href="https://www.netlify.com/"><img class="nf-logo" src="https://example-styles.netlify.app/images/logo-netlify-small-monochrome-darkmode.svg" alt="Netlify"></a>
+      <a href="https://www.netlify.com/"><img class="nf-logo"
+          src="https://example-styles.netlify.app/images/logo-netlify-small-monochrome-darkmode.svg" alt="Netlify"></a>
       <ul id="navigation">
         <li><a href="https://www.netlify.com/compose">Compose 2024</a></li>
       </ul>
     </nav>
     <section id="masthead">
       <h1>The Compose Code Challenge</h1>
-      <p>Complete some coding and configuration tasks to enter the prize draw to win an iPad and other goodies at Netlify Compose 2024</p>
+      <p>Complete some coding and configuration tasks to enter the prize draw to win an iPad and other goodies at
+        Netlify Compose 2024</p>
     </section>
   </header>
   <main>
-      <section>
-    <blockquote>
-      <img src="/images/check.svg" class="check" alt="Checkmark" />
+    <section>
+      <blockquote>
+        <img src="/images/check.svg" class="check" alt="Checkmark" />
+        <p>
+          You created and deployed a site. That was step 1. You're on your way.
+        </p>
+      </blockquote>
       <p>
-        You created and deployed a site. That was step 1. You're on your way.
+        Make sure to add your name to the <code>meta</code> tag in the <code>head</code> of the <code>index.html</code>
+        file so that we know who to enter into the prize draw. Done that? Good. Let's move on to Step 2.
       </p>
-    </blockquote>
-    <p>
-      Make sure to add your name to the <code>meta</code> tag in the <code>head</code> of the <code>index.html</code> file so that we know who to enter into the prize draw. Done that? Good. Let's move on to Step 2.
-    </p>
     </section>
     <hr />
     <section>
       <h2>Step 2: Adding an extension</h2>
       <p>
-        Enable and use a Netlify Extension to enter the competition (and to reveal the next steps which will earn you more points for a better chance of winning)
+        Enable and use a Netlify Extension to enter the competition (and to reveal the next steps which will earn you
+        more points for a better chance of winning)
       </p>
       <h3>Here's how:</h3>
       <ol>
-        <li>Install the <code>netlify-edge-includes-at-compose</code> extension to your Netlify team by findling it in the list of extensions or <a href="https://app.netlify.com/extensions/compose-challenge-edge-includes">going directly to it via this link</a>.</li>
-        <li>Once installed, you can use it on any of your sites. Enable it for this site from the Netlify UI under "Site configuration"</li>
+        <li>Install the <code>netlify-edge-includes-at-compose</code> extension to your Netlify team by findling it in
+          the list of extensions or <a href="https://app.netlify.com/extensions/compose-challenge-edge-includes">going
+            directly to it via this link</a>.</li>
+        <li>Once installed, you can use it on any of your sites. Enable it for this site from the Netlify UI under "Site
+          configuration"</li>
         <li>
-          The extension will enable you to inject content into your site via a component as shown below. Add the code shown below to the <code>index.html</code> file in this site and redeploy to see the result.
-          <pre><code>&lt;netlify-edge-include href=&quot;https://compose-challenge.netlify.app/partials/add-image-cdn&quot;&gt;&lt;/netlify-edge-include&gt;</code></pre>      
+          The extension will enable you to inject content into your site via a component as shown below. Add the code
+          shown below to the <code>index.html</code> file in this site and redeploy to see the result.
+          <pre><code>&lt;netlify-edge-include href=&quot;https://compose-challenge.netlify.app/partials/add-image-cdn&quot;&gt;&lt;/netlify-edge-include&gt;</code></pre>
         </li>
         <li>Follow the instructions included into the next deployment of your site</li>
       </ol>
-    </section> 
+    </section>
 
-    <!--looks like a good place for an edge inlcude -->
-    
+    <!-- looks like a good place for an edge inlcude -->
+
 
     <section>
       <!-- maybe an image or two will go here...? -->
     </section>
 
-    <!--looks like a good place for another edge inlcude! -->
-    
+    <!-- looks like a good place for another edge include! -->
+
 
 
   </main>
@@ -76,7 +95,7 @@
     Extra credit: Why not add a global branded footer to the site?
   -->
   <!-- <netlify-edge-include href="https://compose-challenge.netlify.app/partials/footer"></netlify-edge-include>  -->
-  
-</body>
-</html>
 
+</body>
+
+</html>

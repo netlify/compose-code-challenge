@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@netlify/blobs": "^8.0.1",
-    "@netlify/edge-functions": "^2.10.0",
     "@netlify/functions": "^2.8.1"
   }
 }
