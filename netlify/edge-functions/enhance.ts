@@ -1,6 +1,6 @@
 /*
-    Enhance the returned HTML by adding a link to the repository URL
-*/
+ * Enhance the returned HTML by adding a link to the repository URL
+ */
 
 import {
   HTMLRewriter,
