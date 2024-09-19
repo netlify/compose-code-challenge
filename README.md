@@ -2,22 +2,15 @@
 
 Welcome to the coding challenge at Netlify Compose.
 
-This repo contains a site that you can clone, deploy, update, and explore to learn about some Netlify fundamentals. If you are attending Netlify Compose 2024 in San Francisco, following the instrcutions held within this site will also qualify you to enter the prize draw at the end of Netlify Compose Conf.
+This repo contains a site that you can clone, deploy, update, and explore to learn about some Netlify fundamentals. If you are attending Netlify Compose 2024 in San Francisco, following the instructions held within this site will also qualify you to enter the prize draw at the end of Netlify Compose Conf.
 
 ## Get started
 
 To get started, you need to:
 
-1. Clone this repo into a repo in your own GitHub account.
-1. Use your new repo as the source of a new site that you deploy to Netlify.
-1. Follow the instructions included in your newly deployed site to enable various Netlify features.
-
-## Get rolling fast!
-
-We can help you with steps 1 and 2 above. Click the button below to clone the repo and deploy a new site. 
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/compose-code-challenge)
-
+1. Click on the deploy button below. That will clone [this repo](https://github.com/netlify/compose-code-challenge) into a repo in your own GitHub account and use it to create a new site in Netlify.
+        [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/compose-code-challenge)
+1. Visit your newly created site to find the instructions to complete the challenge.
 
 ## Be at Compose to enter the prize draw
 
