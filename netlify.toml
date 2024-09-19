@@ -6,4 +6,7 @@
   publish = "www"
   command = ""
 
-
+# We'll use this Netlify Build Plugin to automatically submit
+# your deployed site to the leaderboard.
+[[plugins]]
+  package = "/plugins/submit-to-leaderboard/index.js"
