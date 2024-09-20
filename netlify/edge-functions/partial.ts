@@ -18,17 +18,24 @@ class ElementHandler {
   async element(element: Element) {
     const name = element.getAttribute("name");
     if (!name) {
+      console.log("Missing name attribute found for partial");
       return;
     }
 
     const relPath = `/partials/${name}.html`;
-    const url = new URL(relPath, this.origin).toString();
+    const url = new URL(relPath, this.origin);
 
     let response = await fetch(new Request(url));
 
     if (response.ok) {
       let html = await response.text();
       element.replace(html, { html: true });
+    }
+
+    if (response.status === 404) {
+      console.log(
+        `Partial not found: ${name}. Add a file named ${name}.html to the www/partials folder.`
+      );
     }
   }
 }
