@@ -5,8 +5,9 @@ module.exports = {
   // Stash some env vars for later when they are not usually available to us
   onPreBuild: async () => {
     const filePath = path.join(__dirname, "../../netlify/data.json");
-    const content = {
-      repoURL: process.env.REPOSITORY_URL,
+    const content = { "default" : {
+            "repoURL": process.env.REPOSITORY_URL,
+        }
     };
 
     fs.writeFile(filePath, JSON.stringify(content), (err) => {
