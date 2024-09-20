@@ -115,13 +115,16 @@ section {
 }
 
 blockquote {
+  border: none;
+  border-radius: var(--radius-3);
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
+  max-width: 54rem;
 }
 
 blockquote img {
-  width: 2.5rem;
+  width: 2rem;
 }
 
 h2 {
@@ -140,6 +143,12 @@ li {
 
 pre > code {
   display: block;
+}
+
+section img {
+  border-radius: var(--radius-3);
+  margin-bottom: 2rem;
+  max-width: 54rem;
 }
 
 /* ---- Marquee ---- */
@@ -201,8 +210,9 @@ pre > code {
 /* ---- Masthead ---- */
 
 .masthead {
+  margin: 0 auto;
   max-width: 50rem;
-  padding: 2rem 1.5rem;
+  padding: 4rem 1.5rem 3rem;
   text-align: center;
 }
 
