@@ -1,4 +1,4 @@
-/*
+/**
  * Enhance the returned HTML by adding a link to the repository URL
  */
 
@@ -20,14 +20,17 @@ export default async (request: Request, context: Context) => {
       },
     })
     .on('*[data-nf-enhance="repo-link-index.html"]', {
-        element(element) {
-          element.prepend(`<a href="${repoURL}/blob/main/www/index.html" target="_blank">`, {
+      element(element) {
+        element.prepend(
+          `<a href="${repoURL}/blob/main/www/index.html" target="_blank">`,
+          {
             html: true,
-          });
-          element.append(`</a>`, { html: true });
-          element.removeAndKeepContent();
-        },
-      })
+          },
+        );
+        element.append(`</a>`, { html: true });
+        element.removeAndKeepContent();
+      },
+    })
     .transform(resp);
 };
 

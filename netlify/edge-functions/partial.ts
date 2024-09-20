@@ -29,7 +29,7 @@ class ElementHandler {
 
     if (response.status === 404) {
       console.log(
-        `Partial not found: ${name}. Add a file named ${name}.html to the www/partials folder.`
+        `Partial not found: ${name}. Add a file named ${name}.html to the www/partials folder.`,
       );
     }
 

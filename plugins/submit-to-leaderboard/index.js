@@ -5,9 +5,10 @@ module.exports = {
   // Stash some env vars for later when they are not usually available to us
   onPreBuild: async () => {
     const filePath = path.join(__dirname, "../../netlify/data.json");
-    const content = { "default" : {
-            "repoURL": process.env.REPOSITORY_URL,
-        }
+    const content = {
+      default: {
+        repoURL: process.env.REPOSITORY_URL,
+      },
     };
 
     fs.writeFile(filePath, JSON.stringify(content), (err) => {
@@ -29,8 +30,8 @@ module.exports = {
     // avoid duplicates due to different protocols
     const url = new URL(process.env.URL);
     const protocol = url.protocol;
-    if (protocol !== 'https:') {
-        return;
+    if (protocol !== "https:") {
+      return;
     }
 
     await fetch("https://compose-challenge.netlify.app/submission", {
