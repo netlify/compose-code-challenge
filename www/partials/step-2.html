@@ -1,0 +1,44 @@
+<section>
+  <h2>Step 2: Adding an extension</h2>
+  <p>
+    Make sure to add your name to the <code>meta</code> tag in the
+    <code>head</code> of the
+    <span data-nf-enhance="repo-link-index.html"><code>index.html</code></span>
+    file so that we know who to enter into the prize draw.
+  </p>
+  <p>
+    Now, let's enable and use a Netlify Extension in order to enter the
+    competition and to reveal the next steps which will earn you more points for
+    a better chance of winning.
+  </p>
+  <h3>Here's how:</h3>
+  <ol>
+    <li>
+      Install the
+      <a
+        href="https://app.netlify.com/extensions/compose-challenge-edge-includes"
+        target="_blank"
+      >
+        <code>netlify-edge-includes-at-compose</code>
+      </a>
+      extension for your Netlify team.
+    </li>
+    <li>
+      Once installed, you can use it on any of your sites. Enable it for this
+      site from the Netlify UI under "Site configuration / General"
+    </li>
+    <li>
+      The extension will let you inject content into your site via a component.
+      Add the code shown below to this site's
+      <span data-nf-enhance="repo-link-index.html">
+        <code>index.html</code>
+      </span>
+      and push your changes to trigger another site deployment to to see the
+      result.
+      <pre><code>&lt;netlify-edge-include href=&quot;https://compose-challenge.netlify.app/partials/add-image-cdn&quot;&gt;&lt;/netlify-edge-include&gt;</code></pre>
+    </li>
+    <li>
+      Follow the instructions included into the next deployment of your site
+    </li>
+  </ol>
+</section>
