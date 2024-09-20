@@ -23,6 +23,15 @@ module.exports = {
             console.log("Local build. We'll only tell the leaderboard if it's deployed.");
             return;
         }
+
+        // avoid duplicates due to different protocols
+        const url = new URL(process.env.URL);
+        const protocol = url.protocol;
+        if (protocol !== 'https:') {
+            return;
+        }
+
+        // submit the score to the leaderboard
         await fetch('https://compose-challenge.netlify.app/submission', {
             method: 'POST',
             headers: {
