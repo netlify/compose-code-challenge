@@ -27,15 +27,15 @@ class ElementHandler {
 
     let response = await fetch(new Request(url));
 
-    if (response.ok) {
-      let html = await response.text();
-      element.replace(html, { html: true });
-    }
-
     if (response.status === 404) {
       console.log(
         `Partial not found: ${name}. Add a file named ${name}.html to the www/partials folder.`
       );
+    }
+
+    if (response.ok) {
+      let html = await response.text();
+      element.replace(html, { html: true });
     }
   }
 }
