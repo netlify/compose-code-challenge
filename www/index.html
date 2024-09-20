@@ -39,33 +39,8 @@
 
   <body>
     <header>
-      <nav>
-        <a href="https://www.netlify.com/">
-          <img
-            class="nf-logo"
-            src="https://example-styles.netlify.app/images/logo-netlify-small-monochrome-darkmode.svg"
-            alt="Netlify"
-          />
-        </a>
-        <ul id="navigation">
-          <li>
-            <a href="https://www.netlify.com/compose">Compose 2024</a>
-          </li>
-        </ul>
-      </nav>
-
-      <section class="masthead">
-        <div class="conf-subhead">
-          <img class="conf-mark" src="/images/compose-mark.svg" />
-          <span class="conf-title">Netlify Compose</span>
-          <span class="conf-loc">San Francisco</span>
-        </div>
-        <h1>Code Challenge</h1>
-        <p>
-          Complete some coding and configuration tasks to enter the prize draw
-          to win an iPad and other goodies at Netlify Compose 2024
-        </p>
-      </section>
+      <partial name="marquee"></partial>
+      <partial name="masthead"></partial>
     </header>
 
     <main>
@@ -124,9 +99,8 @@
               <span data-nf-enhance="repo-link"><code>index.html</code></span>
               file in this site and push your changes to trigger another site
               deployment to to see the result.
-              <pre>
-                <code>&lt;netlify-edge-include href=&quot;https://compose-challenge.netlify.app/partials/add-image-cdn&quot;&gt;&lt;/netlify-edge-include&gt;</code>
-              </pre>
+              <pre><code>&lt;netlify-edge-include href=&quot;https://compose-challenge.netlify.app/partials/add-image-cdn&quot;&gt;&lt;/netlify-edge-include&gt;
+&lt;netlify-edge-include href=&quot;https://compose-challenge.netlify.app/partials/add-image-cdn&quot;&gt;&lt;/netlify-edge-include&gt;</code></pre>
             </li>
             <li>
               Follow the instructions included into the next deployment of your
@@ -143,6 +117,145 @@
       </section>
 
       <!-- looks like a good place for another edge include! -->
+
+      <section class="step">
+        <blockquote>
+          <img src="/images/check.svg" class="check" alt="Checkmark" />
+          <p>
+            Looking good! You enabled an integration which provides
+            <em>edge includes</em>, a convenient way to import and insert HTML
+            into your pages on request with and Edge Function. Let's keep going!
+          </p>
+        </blockquote>
+        <div class="step-content">
+          <div class="step-num"><span>Step 3</span></div>
+          <h2>Serve images with the Netlify Image CDN</h2>
+          <p class="step-intro">
+            Now lets add image to this page and serve it via the Netlify Image
+            CDN. Doing that gives you access to image optimisations,
+            transformations, and high performance serving of image assets.
+            Handy!
+          </p>
+          <ol>
+            <li>
+              Add an image element to the page by editing the
+              <code>index.html</code> file. There's an image asset already in
+              this repo so you could just add this:
+              <pre><code>&lt;img src="/images/bay-bridge.jpg" alt="A photo of the Bay Bridge in San Francisco" /&gt;
+    </code></pre>
+            </li>
+            <li>
+              Update your new image element's <code>src</code> attribute to so
+              that Netlify serves it via the Image CDN rather directoy from your
+              site's assets
+              <pre><code>src="/.netlify/images/?url=/images/bay-bridge.jpg"
+    </code></pre>
+            </li>
+            <li>
+              Add a resized copy of the image by duplicating the image element
+              in the HTML and adding a width attribute like this:
+              <pre><code>src="/.netlify/images/?url=/images/bay-bridge.jpg&amp;width=200"
+    </code></pre>
+            </li>
+            <li>
+              Done? Let's move on to the next part of the challenge! Get the
+              next instructions by adding another edge include as shown below to
+              reveal the instructions in your site after you deploy.
+              <pre><code class="language-html">&lt;netlify-edge-include href="https://compose-challenge.netlify.app/partials/add-blob-storage"&gt;&lt;/netlify-edge-include&gt;
+    </code></pre>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <!-- maybe an image or two will go here...? -->
+        <img
+          src="/.netlify/images/?url=/images/bay-bridge.jpg"
+          alt="A photo of the Bay Bridge in San Francisco"
+        />
+        <img
+          src="/.netlify/images/?url=/images/bay-bridge.jpg&amp;width=200"
+          alt="A photo of the Bay Bridge in San Francisco"
+        />
+      </section>
+
+      <!--looks like a good place for another edge inlcude! -->
+      <hr />
+      <section class="step">
+        <blockquote>
+          <img src="/images/check.svg" class="check" alt="Checkmark" />
+          <p>
+            Got a couple of pictures there? Different sizes? Great! You're using
+            Netlify to resize, optimize, and serve those for you. Let's earn you
+            some more points to improve your chances of winning the prize draw
+            with step 4...
+          </p>
+        </blockquote>
+        <div class="step-content">
+          <div class="step-num"><span>Step 4</span></div>
+          <h2>Read and write data with Netlify Blobs</h2>
+          <p class="step-intro">
+            Time to use another powerful Netlify primitive: Netlify Blobs. Among
+            othert things, Netlify Blobs can be used as a KV store. We'll use
+            that to add an interactive counter to your site.
+          </p>
+          <ol>
+            <li>
+              Add some UI as HTML to this page to give you a button and a
+              counter
+            </li>
+            <li>
+              Add the JavaScript below to your page to handle button clicks and
+              dispatch calls to a serverless API
+            </li>
+            <li>
+              Edit the serverless API
+              (<code>/netlify/edge-functions/count.ts</code>) to enable it to
+              use the Netlify Blob Store (the code is all in there waiting for
+              you to uncomment it)
+            </li>
+            <li>Deploy your site change to qualify for the prize draw.</li>
+          </ol>
+          <h3>Button and counter UI</h3>
+          <pre><code class="language-html">&lt;section&gt;
+  &lt;div class="panel"&gt;
+    &lt;button id="ccc-vote"&gt;Pick me, pick me!&lt;/button&gt;
+    &lt;b id="ccc-vote-count"&gt;&lt;/b&gt;
+  &lt;/div&gt;
+  &lt;!-- Add some JavaScript to handle the clicks and post to the blob store API function --&gt;
+&lt;/section&gt;</code></pre>
+          <h3>Button click handler and local API call</h3>
+          <pre><code class="language-html">&lt;script&gt;
+      const button = document.getElementById("ccc-vote");
+      const count = document.getElementById("ccc-vote-count");
+      button.addEventListener("click", async (event) =&gt; {
+        const response = await fetch("/api/count", {
+          method: "POST",
+        });
+        count.textContent = await response.text();
+      });
+    &lt;/script&gt;
+    </code></pre>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel">
+          <button id="ccc-vote">Pick me, pick me!</button>
+          <b id="ccc-vote-count">23</b>
+        </div>
+        <script>
+          const button = document.getElementById("ccc-vote");
+          const count = document.getElementById("ccc-vote-count");
+          button.addEventListener("click", async (event) => {
+            const response = await fetch("/api/count", {
+              method: "POST",
+            });
+            count.textContent = await response.text();
+          });
+        </script>
+      </section>
     </main>
 
     <!--
