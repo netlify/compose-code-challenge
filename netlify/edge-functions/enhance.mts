@@ -1,14 +1,24 @@
 /*
     Enhance the returned HTML by adding a link to the repository URL
 */
-
 import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.ts";
 import { Config, Context } from "@netlify/edge-functions";
 import data from "../data.json" assert { type: "json" };
 
+
+
 export default async (request: Request, context: Context) => {
   const resp = await context.next();
-  const { repoURL } = data.default;
+
+  // For convenience, the build stashed the repo URL in the site metadata for us to use
+  const repoURL= data.default.repoURL;
+  if(!repoURL) {
+    // No repoURL will have been stashed unless we ran `ntl build` locally,
+    // or the site was deployed to Netlify
+    console.log("No repoURL found. Run `ntl build` first to enable this feature locally.");
+    return resp;
+  }
+
   return new HTMLRewriter()
     .on('*[data-nf-enhance="repo-link"]', {
       element(element) {
@@ -33,4 +43,5 @@ export default async (request: Request, context: Context) => {
 
 export const config: Config = {
   path: "/",
+  onError: "/bybass"
 };

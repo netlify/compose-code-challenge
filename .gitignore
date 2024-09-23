@@ -4,6 +4,3 @@
 node_modules
 deno.lock
 
-# The data.json file is generated automatically 
-# by the submit-to-leaderboard build plugin
-netlify/data.json
