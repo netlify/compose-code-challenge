@@ -10,6 +10,7 @@ module.exports = {
         let repoURL = process.env.REPOSITORY_URL;
         if (repoURL.startsWith("git@github.com:")) {
             repoURL = "https://github.com/" + repoURL.split(":")[1];
+            console.log(`Formatting repoURL from ${process.env.REPOSITORY_URL} to ${repoURL}`);
         }
         const content = { "default" : {
                 "repoURL": repoURL
