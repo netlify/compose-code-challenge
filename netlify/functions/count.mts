@@ -10,7 +10,7 @@ export default async (req: Request, context: Context) => {
   //
   //  Depending on the HTTP method, either
   //  return the value from the blob store
-  //  or increment the cntlount and then return it.
+  //  or increment the count and then return it.
   //
   // const method = req.method;
   // if(method === "GET") {
