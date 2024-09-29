@@ -1,5 +1,5 @@
 <html lang="en">
-  <!doctype html>
+  <!DOCTYPE html>
 
   <head>
     <meta charset="UTF-8" />
@@ -22,42 +22,17 @@
     <link rel="stylesheet" href="https://example-styles.netlify.app/styles.css" />
     <link rel="stylesheet" href="/styles.css" />
 
-    <!--
-    TODO: Add your name to enter the prize draw
-  -->
+    <!-- TODO: Add your name to enter the prize draw -->
     <!-- <meta name="author" content="YOUR NAME"> -->
 
-    <!--
-    TODO: Add your email and we'll show an avatar in the leaderboard.
-    (And you'll get more points!
-    -->
+    <!-- TODO: Add your email and we'll show an avatar in the leaderboard. (And
+    you'll get more points!) -->
     <!-- <meta name="email" content="YOUR EMAIL ADDRESS"> -->
   </head>
 
   <body>
-    <header>
-      <nav>
-        <a href="https://www.netlify.com/">
-          <img
-            class="nf-logo"
-            src="https://example-styles.netlify.app/images/logo-netlify-small-monochrome-darkmode.svg"
-            alt="Netlify"
-          />
-        </a>
-        <ul id="navigation">
-          <li>
-            <a href="https://www.netlify.com/compose">Compose 2024</a>
-          </li>
-        </ul>
-      </nav>
-      <section id="masthead">
-        <h1>The Compose Code Challenge</h1>
-        <p>
-          Complete some coding and configuration tasks to enter the prize draw to win an iPad and
-          other goodies at Netlify Compose 2024
-        </p>
-      </section>
-    </header>
+    <partial name="header"></partial>
+
     <main>
       <section>
         <blockquote>
@@ -117,21 +92,16 @@
         </ol>
       </section>
 
-      <!-- looks like a good place for an edge include -->
+      <!-- This looks like a good place for an edge include. -->
 
       <section>
-        <!-- maybe an image or two will go here...? -->
+        <!-- Maybe an image or two will go here...? -->
       </section>
 
-      <!-- looks like a good place for another edge include! -->
+      <!-- This looks like another good place for an edge include! -->
     </main>
 
-    <!--
-    TODO:
-    Extra credit: Why not add a global branded footer to the site?
-  -->
-    <!-- <netlify-edge-include href="https://compose-challenge.netlify.app/partials/footer">
-
-    </netlify-edge-include>  -->
+    <!-- TODO: Extra credit: Why not add a global branded footer to the site? -->
+    <!-- <netlify-edge-include href="https://compose-challenge.netlify.app/partials/footer"></netlify-edge-include> -->
   </body>
 </html>
