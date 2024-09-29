@@ -8,6 +8,10 @@ module.exports = {
 
     // normalize the repo URL to be a public https URL
     let repoURL = process.env.REPOSITORY_URL;
+    if (!repoURL) {
+      console.error('REPOSITORY_URL not set for build.');
+      return;
+    }
     if (repoURL.startsWith('git@github.com:')) {
       repoURL = 'https://github.com/' + repoURL.split(':')[1];
       console.log(`Formatting repoURL from ${process.env.REPOSITORY_URL} to ${repoURL}`);
@@ -34,6 +38,17 @@ module.exports = {
       return;
     }
 
+    // Get the GitHub username from the repo URL
+    let repoURL = process.env.REPOSITORY_URL || '';
+    if (repoURL.length === 0) {
+      console.error('REPOSITORY_URL not set. Cannot get GitHub username.');
+    }
+    if (repoURL.startsWith('git@github.com:')) {
+      repoURL = 'https://github.com/' + repoURL.split(':')[1];
+      console.log(`Formatting repoURL from ${process.env.REPOSITORY_URL} to ${repoURL}`);
+    }
+    const githubUsername = repoURL.replace('https://github.com/', '').split('/')[0];
+
     // Normalize the URL to remove any protocol differences
     const url = new URL(process.env.URL);
     const siteURL = `https://${url.hostname}`;
@@ -47,7 +62,7 @@ module.exports = {
       },
       body: JSON.stringify({
         url: siteURL,
-        excluded: false,
+        username: githubUsername,
       }),
     });
   },
