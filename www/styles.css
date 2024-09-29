@@ -1,12 +1,206 @@
-/*
-  Local styles, additional to the baseline example stles at https://example-styles.netlify.app/styles.css 
-*/
+/**
+ * Local styles, additional to the baseline example styles at:
+ * https://example-styles.netlify.app/styles.css
+ */
+
+/* ---- Base ---- */
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  max-width: 54rem;
+  padding: 3rem 1.5rem;
+  margin: 0 auto;
+}
+
+section img {
+  border-radius: var(--radius-3);
+  display: block;
+  margin-bottom: 2rem;
+  max-width: 54rem;
+}
+
+h2 {
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  padding: 0;
+  margin: 2rem 0 1rem;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+pre > code {
+  display: block;
+}
 
 blockquote {
+  border: none;
+  border-radius: var(--radius-3);
   display: flex;
   flex-direction: row;
-  gap: 1.5em;
+  gap: 1.5rem;
+  max-width: 54rem;
 }
+
 blockquote img {
-  width: 2.5em;
+  margin-bottom: 0;
+  width: 2rem;
+}
+
+/* ---- Marquee ---- */
+
+.header-marquee {
+  border-bottom: 1px solid var(--blue-800);
+  border-top: 1px solid var(--blue-800);
+  margin: 1.5rem 0;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-content {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  padding-right: 2rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.prize,
+.win {
+  font-family: var(--font-headings);
+  font-size: var(--step-2);
+  font-weight: 800;
+}
+
+.win {
+  text-transform: uppercase;
+  color: var(--blue-600);
+}
+
+.shape-1,
+.shape-2 {
+  width: 1.25rem;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Pause animation on hover */
+.header-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ---- Masthead ---- */
+
+.masthead {
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.masthead h1 {
+  font-size: 4.5rem;
+  margin-bottom: 2.5rem;
+  padding: 0;
+}
+
+.masthead p {
+  font-family: var(--font-headings);
+  font-size: var(--step-2);
+  font-weight: 600;
+}
+
+.conf-subhead {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-headings);
+  font-size: var(--step-1);
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.conf-mark {
+  width: 2rem;
+}
+
+.conf-title {
+  font-weight: 600;
+}
+
+.conf-loc {
+  color: var(--teal-400);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* ---- Challenge step ---- */
+
+.step-badge {
+  margin-bottom: 1rem;
+}
+
+.step-badge span {
+  display: inline-block;
+  background-color: var(--neutral-light-000);
+  border-radius: 2rem;
+  color: var(--neutral-dark-800);
+  font-weight: 600;
+  font-size: var(--step-0);
+  padding: 0.25rem 0.75rem;
+}
+
+.step-intro {
+  font-size: var(--step-2);
+  font-weight: 600;
+}
+
+/* ---- Panel ---- */
+
+.panel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.panel > div {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.panel span {
+  font-size: var(--step-0);
+  text-transform: uppercase;
+  color: var(--blue-500);
+}
+
+.panel b {
+  font-size: var(--step-2);
+  font-weight: 800;
 }
