@@ -1,17 +1,31 @@
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * Format the repo URL to be a public https URL
+ *
+ * @param {string} repoURL - The repo URL to format
+ * @returns {string} - The formatted repo URL
+ */
+function formatRepoURL(repoURL = '') {
+  if (repoURL.startsWith('git@github.com:')) {
+    repoURL = 'https://github.com/' + repoURL.split(':')[1];
+    console.log(`Formatting repoURL from ${process.env.REPOSITORY_URL} to ${repoURL}`);
+  }
+  return repoURL;
+}
+
 module.exports = {
   onPreBuild: async () => {
     // Stash some env vars for later when they are not usually available to use
     const filePath = path.join(__dirname, '../../netlify/data.json');
 
-    // normalize the repo URL to be a public https URL
-    let repoURL = process.env.REPOSITORY_URL;
-    if (repoURL.startsWith('git@github.com:')) {
-      repoURL = 'https://github.com/' + repoURL.split(':')[1];
-      console.log(`Formatting repoURL from ${process.env.REPOSITORY_URL} to ${repoURL}`);
+    const repoURL = formatRepoURL(process.env.REPOSITORY_URL);
+    if (!repoURL) {
+      console.error('REPOSITORY_URL not set for build.');
+      return;
     }
+
     const content = {
       default: {
         repoURL: repoURL,
@@ -38,6 +52,8 @@ module.exports = {
     const url = new URL(process.env.URL);
     const siteURL = `https://${url.hostname}`;
 
+    const repoURL = formatRepoURL(process.env.REPOSITORY_URL);
+
     console.log(`Registering ${siteURL} in the leaderboard`);
 
     await fetch('https://compose-challenge.netlify.app/submission', {
@@ -47,7 +63,7 @@ module.exports = {
       },
       body: JSON.stringify({
         url: siteURL,
-        excluded: false,
+        repoUrl: repoURL,
       }),
     });
   },
